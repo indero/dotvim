@@ -7,3 +7,6 @@
 [submodule "bundle/acp"]
 	path = bundle/acp
 	url = https://github.com/vim-scripts/AutoComplPop.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
