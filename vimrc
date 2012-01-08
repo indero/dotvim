@@ -1,9 +1,13 @@
+"Thanks to Derek Wyatt
+"and Jeffrey Way.
+
+
 "Pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 
-"My Colorscheme
+"My colorscheme
 colorscheme xoria256
 
 
@@ -12,7 +16,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-
+"From Derek Wyatt
 
 " Set the status line the way i like it
 set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
@@ -21,8 +25,8 @@ set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [
 set laststatus=2
 " Make command line two lines high
 set ch=2
-" set visual bell -- i hate that damned beeping
 
+" set visual bell -- i hate that damned beeping
 set vb
 
 " Make the 'cw' and like commands put a $ at the end instead of just deleting
@@ -67,8 +71,8 @@ set fillchars = ""
 set autoread
 
 
-"Jeffrey Way
-"
+"From Jeffrey Way
+
 "Change zen coding plugin expansion key to shift + e
 let g:user_zen_expandabbr_key = '<C-e>'
 
