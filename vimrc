@@ -17,8 +17,6 @@ colorscheme xoria256
 
 " Set filetype stuff to on
 filetype on
-filetype plugin on
-filetype indent on
 
 "From Derek Wyatt
 
