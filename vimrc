@@ -1,9 +1,13 @@
 "Thanks to Derek Wyatt
 "and Jeffrey Way.
 
+"Note that you need to invoke the pathogen functions before invoking “filetype plugin indent on” if you want it to load ftdetect files. On Debian (and probably other distros), the system vimrc does this early on, so you actually need to “filetype off” before “filetype plugin indent on” to force reloading.
 
 "Pathogen
 call pathogen#runtime_append_all_bundles()
+filetype off
+syntax on
+filetype plugin indent on
 call pathogen#helptags()
 
 
