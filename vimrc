@@ -1,6 +1,9 @@
 "Thanks to Derek Wyatt
 "and Jeffrey Way.
 
+"This changes the values of a LOT of options, enabling features which are not Vi compatible but really really nice.
+set nocp
+
 "Note that you need to invoke the pathogen functions before invoking “filetype plugin indent on” if you want it to load ftdetect files. On Debian (and probably other distros), the system vimrc does this early on, so you actually need to “filetype off” before “filetype plugin indent on” to force reloading.
 
 "Pathogen
@@ -81,3 +84,13 @@ let g:user_zen_expandabbr_key = '<C-e>'
 "Spelling corrects. Just for example. Add yours below.
 iab teh the
 iab Teh The
+
+"From dasrecht
+"
+"jj = <esc>  Very useful for keeping your hands on the home row   
+imap jj <Esc>
+
+"My Settings
+
+"Begin search while typing
+set incsearch
