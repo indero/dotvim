@@ -16,3 +16,6 @@
 [submodule "bundle/puppet"]
 	path = bundle/puppet
 	url = https://github.com/kogent/vim-puppet.git
+[submodule "bundle/vim-repeat"]
+	path = bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
