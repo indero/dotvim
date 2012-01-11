@@ -28,3 +28,6 @@
 [submodule "bundle/searchcomplete"]
 	path = bundle/searchcomplete
 	url = https://github.com/vim-scripts/SearchComplete.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
