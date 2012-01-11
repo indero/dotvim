@@ -31,3 +31,6 @@
 [submodule "bundle/vimcss"]
 	path = bundle/vimcss
 	url = https://github.com/ap/vim-css-color.git
+[submodule "bundle/surround"]
+	path = bundle/surround
+	url = https://github.com/tpope/vim-surround.git
