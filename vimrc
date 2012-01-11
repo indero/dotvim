@@ -101,6 +101,5 @@ set noerrorbells
 
 "Load a host specific file
 if filereadable("vimrc.local")
-	echo "SpecificFile exists
 	source vimrc.local
 endif
