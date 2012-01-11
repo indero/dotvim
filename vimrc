@@ -86,11 +86,16 @@ iab teh the
 iab Teh The
 
 "From dasrecht
-"
+
 "jj = <esc>  Very useful for keeping your hands on the home row   
 imap jj <Esc>
+
 
 "My Settings
 
 "Begin search while typing
 set incsearch
+
+"don't beep 
+set noerrorbells
+
