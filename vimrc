@@ -60,6 +60,9 @@ set wildmenu
 " Enable search highlighting
 set hlsearch
 
+" I don't like it when the matching parens are automatically highlighted
+let loaded_matchparen = 1
+
 " Add the unnamed register to the clipboard
 set clipboard+=unnamed
 
@@ -98,6 +101,10 @@ set incsearch
 
 "don't beep 
 set noerrorbells
+set novisualbell
+
+" change the mapleader from \ to ,
+let mapleader=","
 
 "Load a host specific file
 if filereadable("vimrc.local")
