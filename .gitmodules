@@ -1,36 +1,48 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = http://github.com/tpope/vim-fugitive.git
+	ignore = dirty
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+	ignore = dirty
 [submodule "bundle/acp"]
 	path = bundle/acp
 	url = https://github.com/vim-scripts/AutoComplPop.git
+	ignore = dirty
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+	ignore = dirty
 [submodule "bundle/zencoding"]
 	path = bundle/zencoding
 	url = https://github.com/mattn/zencoding-vim.git
+	ignore = dirty
 [submodule "bundle/puppet"]
 	path = bundle/puppet
 	url = https://github.com/kogent/vim-puppet.git
+	ignore = dirty
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
+	ignore = dirty
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = https://github.com/edsono/vim-matchit.git
+	ignore = dirty
 [submodule "bundle/searchcomplete"]
 	path = bundle/searchcomplete
 	url = https://github.com/vim-scripts/SearchComplete.git
+	ignore = dirty
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+	ignore = dirty
 [submodule "bundle/vimcss"]
 	path = bundle/vimcss
 	url = https://github.com/ap/vim-css-color.git
+	ignore = dirty
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround.git
+	ignore = dirty
