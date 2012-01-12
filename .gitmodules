@@ -46,3 +46,7 @@
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround.git
 	ignore = dirty
+[submodule "bundle/gpg"]
+	path = bundle/gpg
+	url = https://github.com/vim-scripts/gnupg.vim.git
+	ignore = dirty
