@@ -115,6 +115,12 @@ nmap <F5> :set number! number?<CR>
 " set indenting for puppet files
 autocmd FileType puppet setlocal shiftwidth=4 tabstop=4
 
+" disable cursor keys in normal mode
+map <Left>  :echo "no!"<cr>
+map <Right> :echo "no!"<cr>
+map <Up>    :echo "no!"<cr>
+map <Down>  :echo "no!"<cr>
+
 "Load a host specific file
 if filereadable(expand("$HOME/.vim/vimrc.local"))
         source $HOME/.vim/vimrc.local
