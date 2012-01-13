@@ -104,7 +104,7 @@ set noerrorbells
 set novisualbell
 
 " change the mapleader from \ to ,
-let mapleader
+let mapleader=","
 
 " paste mode toggle
 set pastetoggle=<f4>
