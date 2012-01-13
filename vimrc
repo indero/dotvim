@@ -104,7 +104,16 @@ set noerrorbells
 set novisualbell
 
 " change the mapleader from \ to ,
-let mapleader=","
+let mapleader
+
+" paste mode toggle
+set pastetoggle=<f4>
+
+" toggle number
+nmap <F5> :set number! number?<CR>
+
+" set indenting for puppet files
+autocmd FileType puppet setlocal shiftwidth=4 tabstop=4
 
 "Load a host specific file
 if filereadable(expand("$HOME/.vim/vimrc.local"))
