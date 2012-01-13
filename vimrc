@@ -107,6 +107,6 @@ set novisualbell
 let mapleader=","
 
 "Load a host specific file
-if filereadable("vimrc.local")
-	source vimrc.local
+if filereadable(expand("$HOME/.vim/vimrc.local"))
+        source $HOME/.vim/vimrc.local
 endif
