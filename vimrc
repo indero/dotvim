@@ -121,6 +121,10 @@ map <Right> :echo "no!"<cr>
 map <Up>    :echo "no!"<cr>
 map <Down>  :echo "no!"<cr>
 
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
 "Load a host specific file
 if filereadable(expand("$HOME/.vim/vimrc.local"))
         source $HOME/.vim/vimrc.local
