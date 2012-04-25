@@ -24,8 +24,10 @@ filetype on
 "From Derek Wyatt
 
 " Set the status line the way i like it
-set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
+"set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
 " tell VIM to always put a status line in, even if there is only one window
+" "https://wincent.com/wiki/Set_the_Vim_statusline
+set statusline=%<\ %f\%m%r\ %y\ %{fugitive#statusline()}\ %=%-35.(Line:\ %l\ of\ %L,\ Col:\ %c%V\ Buf:#%n\ (%P)%)
 
 set laststatus=2
 " Make command line two lines high
@@ -56,6 +58,7 @@ set scrolloff=8
 
 " Make the command-line completion better
 set wildmenu
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpe?g,*.png,*.xpm,*.gif,*.pyc
 
 " Enable search highlighting
 set hlsearch
@@ -125,7 +128,41 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+"Powerline Config
+let g:Powerline_symbols = 'unicode'
+set encoding=utf-8
+
+"http://stackoverflow.com/questions/849084/what-fold-should-i-use-in-vim
+" Folding stuff
+"hi Folded guibg=red guifg=Red cterm=bold ctermbg=DarkGrey ctermfg=lightblue
+hi FoldColumn guibg=grey78 gui=Bold guifg=DarkBlue
+set foldcolumn=2
+set foldclose=
+set foldmethod=indent
+set foldnestmax=10
+set foldlevel=999
+"set fillchars=vert:\|,fold:\
+"set foldminlines=1
+" Toggle fold state between closed and opened.
+
+" If there is no fold at current line, just moves forward.
+" If it is present, reverse it's state.
+fu! ToggleFold()
+  if foldlevel('.') == 0
+    normal! l
+  else
+    if foldclosed('.') < 0
+      . foldclose
+    else
+      . foldopen
+    endif
+  endif
+  echo
+endf
+" Map this function to Space key.
+noremap <space> :call ToggleFold()<CR>
+
 "Load a host specific file
 if filereadable(expand("$HOME/.vim/vimrc.local"))
-        source $HOME/.vim/vimrc.local
+  source $HOME/.vim/vimrc.local
 endif
