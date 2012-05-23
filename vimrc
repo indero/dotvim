@@ -38,7 +38,9 @@ set vb
 
 " Make the 'cw' and like commands put a $ at the end instead of just deleting
 " the text and replacing it
-set cpoptions=ces$
+"set cpoptions=ces$
+"To use the snipmate plugin ces$ does not work. Use B$ instead.
+set cpoptions=B$
 
 " tell VIM to always put a status line in, even if there is only one window
 set laststatus=2
