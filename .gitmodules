@@ -18,10 +18,6 @@
 	path = bundle/zencoding
 	url = https://github.com/mattn/zencoding-vim.git
 	ignore = dirty
-[submodule "bundle/puppet"]
-	path = bundle/puppet
-	url = https://github.com/kogent/vim-puppet.git
-	ignore = dirty
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
