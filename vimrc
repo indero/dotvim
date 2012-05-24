@@ -137,7 +137,7 @@ set encoding=utf-8
 "http://stackoverflow.com/questions/849084/what-fold-should-i-use-in-vim
 " Folding stuff
 "hi Folded guibg=red guifg=Red cterm=bold ctermbg=DarkGrey ctermfg=lightblue
-hi FoldColumn guibg=grey78 gui=Bold guifg=DarkBlue
+"hi FoldColumn guibg=grey78 gui=Bold guifg=DarkBlue
 set foldcolumn=2
 set foldclose=
 set foldmethod=indent
