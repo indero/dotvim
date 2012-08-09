@@ -15,7 +15,7 @@ call pathogen#helptags()
 
 
 "My colorscheme
-colorscheme xoria256
+colorscheme idleFingers
 
 
 " Set filetype stuff to on
