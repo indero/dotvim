@@ -164,6 +164,19 @@ endf
 " Map this function to Space key.
 noremap <space> :call ToggleFold()<CR>
 
+
+" More Stuff
+set tabstop=2                     " a tab is two spaces
+set shiftwidth=2                  " an autoindent (with <<) is two spaces
+
+set list                          " Show invisible characters
+set listchars=""                  " Reset the listchars
+set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
+set listchars+=trail:.            " show trailing spaces as dots
+
+autocmd Filetype tex setlocal nofoldenable " I don't like autofold from vim-latex
+
+
 "Load a host specific file
 if filereadable(expand("$HOME/.vim/vimrc.local"))
   source $HOME/.vim/vimrc.local
