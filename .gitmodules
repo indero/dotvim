@@ -88,3 +88,6 @@
 [submodule "bundle/trailing-whitespace"]
 	path = bundle/trailing-whitespace
 	url = https://github.com/bronson/vim-trailing-whitespace.git
+[submodule "bundle/xterm-colortable"]
+	path = bundle/xterm-colortable
+	url = https://github.com/guns/xterm-color-table.vim
