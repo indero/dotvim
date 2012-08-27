@@ -183,6 +183,11 @@ set listchars+=trail:.            " show trailing spaces as dots
 
 autocmd Filetype tex setlocal nofoldenable " I don't like autofold from vim-latex
 
+set undodir=~/.vim/undodir
+set undofile
+set undolevels = 1000 "maximum number of changes that can be undone
+set undoreload = 10000 "maximum number lines to save for undo on a buffer reload
+
 " load vimrc for testing
 if filereadable(expand("$HOME/.vim-testing/vimrc.local"))
   source $HOME/.vim-testing/vimrc.local
