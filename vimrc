@@ -7,7 +7,14 @@ set nocp
 "Note that you need to invoke the pathogen functions before invoking “filetype plugin indent on” if you want it to load ftdetect files. On Debian (and probably other distros), the system vimrc does this early on, so you actually need to “filetype off” before “filetype plugin indent on” to force reloading.
 
 "Pathogen
-call pathogen#runtime_append_all_bundles()
+"call general plugins
+call pathogen#infect('bundle')
+"call plugins to be tested and might end up in general
+call pathogen#infect('~/.vim-testing/bundle')
+"call plugins I develop
+call pathogen#infect('~/.vim-dev/bundle')
+"call plugins only installed for this machine
+call pathogen#infect('~/.vim-local/bundle')
 filetype off
 syntax on
 filetype plugin indent on
@@ -176,6 +183,20 @@ set listchars+=trail:.            " show trailing spaces as dots
 
 autocmd Filetype tex setlocal nofoldenable " I don't like autofold from vim-latex
 
+" load vimrc for testing
+if filereadable(expand("$HOME/.vim-testing/vimrc.local"))
+  source $HOME/.vim-testing/vimrc.local
+endif
+
+" load vimrc for development
+if filereadable(expand("$HOME/.vim-dev/vimrc.local"))
+  source $HOME/.vim-dev/vimrc.local
+endif
+
+" load vimrc for local machine
+if filereadable(expand("$HOME/.vim-local/vimrc.local"))
+  source $HOME/.vim-local/vimrc.local
+endif
 
 "Load a host specific file
 if filereadable(expand("$HOME/.vim/vimrc.local"))
