@@ -185,8 +185,8 @@ autocmd Filetype tex setlocal nofoldenable " I don't like autofold from vim-late
 
 set undodir=~/.vim/undodir
 set undofile
-set undolevels = 1000 "maximum number of changes that can be undone
-set undoreload = 10000 "maximum number lines to save for undo on a buffer reload
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
 nmap <F6> :TagbarToggle<CR>
 
