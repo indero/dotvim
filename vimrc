@@ -67,6 +67,9 @@ let mapleader=","
 " Very useful for keeping your hands on the home row
 imap jj <Esc>
 
+" Use // to disable highlighted search
+nmap <silent> // :nohlsearch<CR>
+
 " }
 
 " ========== General Config ========== {
@@ -139,6 +142,10 @@ set incsearch
 set noerrorbells
 set novisualbell
 
+" Save session
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
+
 " Set indenting for puppet files
 autocmd FileType puppet setlocal shiftwidth=4 tabstop=4
 
@@ -186,8 +193,11 @@ set encoding=utf-8
 " Change zen coding plugin expansion key to shift + e
 let g:user_zen_expandabbr_key = '<C-e>'
 
-" == Latex Config ==
+" == neocomplcache ==
+let g:neocomplcache_enable_at_startup = 1
+let g:acp_enableAtStartup = 0
 
+" == Latex Config ==
 " Latex plugin does autofold. I don't like this.
 autocmd Filetype tex setlocal nofoldenable " I don't like autofold from vim-latex
 
