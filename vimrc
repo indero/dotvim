@@ -48,7 +48,7 @@ colorscheme idleFingers
 set pastetoggle=<f4>
 
 " Toggle Line number
-nmap <F5> :set number! number?<CR>
+" <F5>
 
 " Toggle Tagbar (ensure ctags are installed)
 nmap <F6> :TagbarToggle<CR>
@@ -146,6 +146,11 @@ set novisualbell
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
+" Read per file settings
+set modeline
+" First and last four lines can contain settings
+set modelines=4
+
 " Set indenting for puppet files
 autocmd FileType puppet setlocal shiftwidth=4 tabstop=4
 
@@ -239,6 +244,23 @@ endf
 noremap <space> :call ToggleFold()<CR>
 
 "}
+
+" ========== Toggle numbers function ========== {
+
+" This function lets you toggle between:
+" number, relativenumber, nonumber
+function! ToggleNumbers()
+    if &number
+        set relativenumber       " was number, now relanum
+    elseif &relativenumber
+        set norelativenumber     " was relanum, now nothing
+    else
+        set number               " was nothing, now number
+    endif
+endfunction
+
+nmap <F5> :silent call ToggleNumbers()<CR>
+" }
 
 "}
 

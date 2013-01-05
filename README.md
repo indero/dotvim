@@ -30,8 +30,11 @@ Load plugins from:
 - ~/.vim-local/bundle/
 
 #### Multiple vimrcs
-Load vimrc from ~/.vim-testing/vimrc.local,~/.vim-dev/vimrc.local,
-~/.vim-local/vimrc.local,~/.vim/vimrc.local
+Load vimrc from:
+- ~/.vim-testing/vimrc.local
+- ~/.vim-dev/vimrc.local
+- ~/.vim-local/vimrc.local
+- ~/.vim/vimrc.local
 
 #### General Settings
 - Keep 100 lines of command history
