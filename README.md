@@ -11,7 +11,7 @@
 Switch to the `~/.vim` directory, and fetch submodules:
 
     cd ~/.vim
-    git submodule update --init.
+    git submodule update --init
 
 ## Whats included:
 
@@ -23,8 +23,11 @@ Switch to the `~/.vim` directory, and fetch submodules:
 ### Settings
 
 #### Multiple plugin directories
-Load plugins from ~/.vim/bundle, ~/.vim-testing/bundle, ~/.vim-dev/bundle and
-~/.vim-local/bundle/
+Load plugins from:
+- ~/.vim/bundle/
+- ~/.vim-testing/bundle/
+- ~/.vim-dev/bundle/
+- ~/.vim-local/bundle/
 
 #### Multiple vimrcs
 Load vimrc from ~/.vim-testing/vimrc.local,~/.vim-dev/vimrc.local,
@@ -50,8 +53,6 @@ Load vimrc from ~/.vim-testing/vimrc.local,~/.vim-dev/vimrc.local,
 #### Folding
 
 Fold and unfold with space key.
-
-
 
 ### Plugins
 - pathogen
