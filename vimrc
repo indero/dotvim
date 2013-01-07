@@ -151,6 +151,11 @@ set modeline
 " First and last four lines can contain settings
 set modelines=4
 
+" Diffrent background color after char 80
+set colorcolumn=80
+let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=234 guibg=#1c1c1c
+
 " Set indenting for puppet files
 autocmd FileType puppet setlocal shiftwidth=4 tabstop=4
 
