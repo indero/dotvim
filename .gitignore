@@ -7,3 +7,4 @@ tags-ja
 vimrc.local
 undodir/*
 *.swp
+view/

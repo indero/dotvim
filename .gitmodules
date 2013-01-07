@@ -103,3 +103,6 @@
 [submodule "bundle/idlefingers"]
 	path = bundle/idlefingers
 	url = https://github.com/indero/vim-idleFingers.git
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
