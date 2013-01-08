@@ -145,6 +145,8 @@ set novisualbell
 " Save session
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
+" Create a view-dir
+set viewdir=~/.vim-cache/view
 
 " Read per file settings
 set modeline
@@ -185,8 +187,21 @@ set listchars+=trail:.
 
 " ===== Undo ===== {
 
+function! EnsureDirExists (dir)
+  if !isdirectory(a:dir)
+    if exists("*mkdir")
+      call mkdir(a:dir,'p')
+      echo "Created directory: " . a:dir
+    else
+      echo "Please create directory: " . a:dir
+    endif
+  endif
+endfunction
+
+call EnsureDirExists($HOME . '/.vim-cache/undodir')
+
 " Create a undo history. Even if the file was closed you can do an undo.
-set undodir=~/.vim/undodir
+set undodir=~/.vim-cache/undodir
 set undofile
 set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload

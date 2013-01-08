@@ -19,6 +19,7 @@ Switch to the `~/.vim` directory, and fetch submodules:
 
 - jj as ESC
 - // reset search highlight
+- ,p open CTRLP
 
 ### Settings
 
