@@ -207,6 +207,11 @@ let g:user_zen_expandabbr_key = '<C-e>'
 let g:neocomplcache_enable_at_startup = 1
 let g:acp_enableAtStartup = 0
 
+" == CTRLP ==
+let g:ctrlp_map = '<LEADER>p'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cache_dir = $HOME.'/.vim-cache/ctrlp'
+
 " == Latex Config ==
 " Latex plugin does autofold. I don't like this.
 autocmd Filetype tex setlocal nofoldenable " I don't like autofold from vim-latex
