@@ -143,8 +143,8 @@ set noerrorbells
 set novisualbell
 
 " Save session
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
+"au BufWinLeave * silent! mkview
+"au BufWinEnter * silent! loadview
 " Create a view-dir
 set viewdir=~/.vim-cache/view
 
@@ -157,9 +157,6 @@ set modelines=4
 set colorcolumn=80
 let &colorcolumn=join(range(81,999),",")
 highlight ColorColumn ctermbg=234 guibg=#1c1c1c
-
-" Set indenting for puppet files
-autocmd FileType puppet setlocal shiftwidth=4 tabstop=4
 
 " ===== Tab stuff ===== {
 " a tab is two spaces
