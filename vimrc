@@ -105,6 +105,9 @@ set mousehide
 " Keep some stuff in the history
 set history=100
 
+"Turn linenumber on
+set number
+
 " When the page starts to scroll, keep the cursor 8 lines from the top and 8
 " lines from the bottom
 set scrolloff=8
