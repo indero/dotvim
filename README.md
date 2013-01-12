@@ -18,6 +18,11 @@ Switch to the `~/.vim` directory, and fetch submodules:
     cd ~/.vim
     git submodule foreach git pull origin master
 
+## Prerequisites
+
+- Patched font for Powerline: https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
+- 256 Color Terminal
+
 ## Whats included:
 
 ### Keystrokes
