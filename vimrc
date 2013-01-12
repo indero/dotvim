@@ -206,9 +206,7 @@ set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
 " ===== Plugin specific ====== {
 
-" == Powerline Config ==
-" Use unicode for the symbols
-let g:Powerline_symbols = 'unicode'
+"Set encoding
 set encoding=utf-8
 
 " == Zen Coding Config ==
@@ -223,6 +221,18 @@ let g:acp_enableAtStartup = 0
 let g:ctrlp_map = '<LEADER>p'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_cache_dir = $HOME.'/.vim-cache/ctrlp'
+
+" == Powerline ==
+" Use Fancy symbols
+" Get one of the fonts from:
+" https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
+let g:Powerline_symbols = 'fancy'
+" Add a segment
+call Pl#Theme#InsertSegment('charcode', 'before', 'fileformat')
+
+" == Tagbar ==
+" Autofocus on opening Tagbar
+let g:tagbar_autofocus = 1
 
 " == Latex Config ==
 " Latex plugin does autofold. I don't like this.

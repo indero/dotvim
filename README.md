@@ -13,6 +13,11 @@ Switch to the `~/.vim` directory, and fetch submodules:
     cd ~/.vim
     git submodule update --init
 
+### Update Plugins
+
+    cd ~/.vim
+    git submodule foreach git pull origin master
+
 ## Whats included:
 
 ### Keystrokes
@@ -20,6 +25,11 @@ Switch to the `~/.vim` directory, and fetch submodules:
 - jj as ESC
 - // reset search highlight
 - ,p open CTRLP
+
+### F-Keys
+- <F4> Toggle paste mode
+- <F5> Toggle between number/relative number/no number
+- <F6> Toggle Tagbar
 
 ### Settings
 
