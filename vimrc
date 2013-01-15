@@ -1,7 +1,7 @@
 " ================ indero's vim config ==============
 
 " Modeline and Notes {
-" vim: set foldmarker={,} foldmethod=marker
+" vim:foldmarker={,}:foldmethod=marker
 "
 "   This is the personal .vimrc file of indero.
 "   While much of it is beneficial for general use, I would
