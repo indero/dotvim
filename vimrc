@@ -157,9 +157,11 @@ set modeline
 set modelines=4
 
 " Diffrent background color after char 80
+if has ('colorcolumn')
 set colorcolumn=80
-let &colorcolumn=join(range(81,999),",")
+let &colorcolumn=join(range(81,237),",")
 highlight ColorColumn ctermbg=234 guibg=#1c1c1c
+endif
 
 " ===== Tab stuff ===== {
 " a tab is two spaces
@@ -201,10 +203,12 @@ endfunction
 call EnsureDirExists($HOME . '/.vim-cache/undodir')
 
 " Create a undo history. Even if the file was closed you can do an undo.
-set undodir=~/.vim-cache/undodir
-set undofile
+if has('undofile')
+  set undodir=~/.vim-cache/undodir
+  set undofile
+  set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+endif
 set undolevels=1000 "maximum number of changes that can be undone
-set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 " }
 
 " ===== Plugin specific ====== {
@@ -284,15 +288,21 @@ noremap <space> :call ToggleFold()<CR>
 
 " This function lets you toggle between:
 " number, relativenumber, nonumber
-function! ToggleNumbers()
+if exists('+relativenumber')
+  function! ToggleNumbers()
     if &number
-        set relativenumber       " was number, now relanum
+      set relativenumber       " was number, now relanum
     elseif &relativenumber
-        set norelativenumber     " was relanum, now nothing
+      set norelativenumber     " was relanum, now nothing
     else
-        set number               " was nothing, now number
+      set number               " was nothing, now number
     endif
-endfunction
+  endfunction
+else
+  function! ToggleNumbers()
+    set number! number?
+  endfunction
+endif
 
 nmap <F5> :silent call ToggleNumbers()<CR>
 " }
