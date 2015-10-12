@@ -30,10 +30,6 @@
 	path = bundle/searchcomplete
 	url = https://github.com/vim-scripts/SearchComplete.git
 	ignore = dirty
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
-	ignore = dirty
 [submodule "bundle/vimcss"]
 	path = bundle/vimcss
 	url = https://github.com/ap/vim-css-color.git
