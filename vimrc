@@ -235,7 +235,7 @@ let g:ctrlp_cache_dir = $HOME.'/.vim-cache/ctrlp'
 " https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
 let g:Powerline_symbols = 'fancy'
 " Add a segment
-call Pl#Theme#InsertSegment('charcode', 'before', 'fileformat')
+"call Pl#Theme#InsertSegment('charcode', 'before', 'fileformat')
 
 " == Tagbar ==
 " Autofocus on opening Tagbar
