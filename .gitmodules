@@ -6,10 +6,6 @@
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
 	ignore = dirty
-[submodule "bundle/acp"]
-	path = bundle/acp
-	url = https://github.com/vim-scripts/AutoComplPop.git
-	ignore = dirty
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -50,10 +46,6 @@
 	path = bundle/vim-puppet
 	url = https://github.com/netdata/vim-puppet
         ignore = dirty
-[submodule "bundle/tlib_vim"]
-	path = bundle/tlib_vim
-	url = https://github.com/tomtom/tlib_vim.git
-        ignore = dirty
 [submodule "bundle/mw-utils"]
 	path = bundle/mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
@@ -61,10 +53,6 @@
 [submodule "bundle/snipmate-snippets"]
 	path = bundle/snipmate-snippets
 	url = https://github.com/honza/snipmate-snippets.git
-        ignore = dirty
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
         ignore = dirty
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
