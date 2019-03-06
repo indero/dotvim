@@ -13,29 +13,63 @@
 " are not Vi compatible but really really nice.
 set nocp
 
-" ========== Pathogen Initialization ========== {
+" ========== MinPac Initialization ========== {
 
-" This loads all the plugins in ~/.vim/bundle
-" Use tpope's pathogen plugin to manage all other plugins
-"
-" Note that you need to invoke the pathogen functions before invoking
-" 'filetype plugin indent' on if you want it to load ftdetect files.
-" On Debian (and probably other distros), the system vimrc does this early on,
-" so you actually need to “filetype off”
-" before “filetype plugin indent on” to force reloading.
+" For a paranoia.
+" Normally `:set nocp` is not needed, because it is done automatically
+" when .vimrc is found.
+if &compatible
+  " `:set nocp` has many side effects. Therefore this should be done
+  " only when 'compatible' is set.
+  set nocompatible
+endif
 
-" Call general plugins
-call pathogen#infect('bundle')
-" Call plugins to be tested and might end up in general
-call pathogen#infect('~/.vim-testing/bundle')
-" Call plugins I develop
-call pathogen#infect('~/.vim-dev/bundle')
-" Call plugins only installed for this machine
-call pathogen#infect('~/.vim-local/bundle')
+packadd minpac
+call minpac#init({'verbose': 3})
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+" Plugins :call#minpac#update()
+call minpac#add('Xuyuanp/nerdtree-git-plugin')
+call minpac#add('airblade/vim-gitgutter')
+call minpac#add('ap/vim-css-color')
+call minpac#add('bronson/vim-trailing-whitespace')
+call minpac#add('ctrlpvim/ctrlp.vim')
+call minpac#add('easymotion/vim-easymotion')
+call minpac#add('godlygeek/tabular')
+call minpac#add('majutsushi/tagbar')
+call minpac#add('netdata/vim-puppet')
+call minpac#add('prettier/vim-prettier')
+call minpac#add('scrooloose/nerdtree')
+call minpac#add('shinzui/vim-idleFingers')
+call minpac#add('tomtom/tcomment_vim')
+call minpac#add('tpope/vim-eunuch')
+call minpac#add('tpope/vim-endwise')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-repeat')
+call minpac#add('tpope/vim-surround')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
+call minpac#add('vim-scripts/SearchComplete')
+call minpac#add('vim-scripts/YankRing.vim')
+call minpac#add('vim-scripts/gnupg.vim', {'type': 'opt'})
+call minpac#add('w0rp/ale')
+" call minpac#add('')
+
+" Optional Plugins
+call minpac#add('guns/xterm-color-table.vim', {'type': 'opt'})
+"call minpac#add('')
+
+
+" minpac utility commands
+command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'do': 'call minpac#status()'})
+command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
+command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
+
+
+" Basic config
 filetype off
 syntax on
 filetype plugin indent on
-call pathogen#helptags()
 
 " }
 

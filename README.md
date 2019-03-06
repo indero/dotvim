@@ -1,22 +1,31 @@
 # My (indero) vim config
 ## Installation:
 
+```bash
     git clone git://github.com/indero/dotvim.git ~/.vim
+```
 
 ### Create symlinks:
 
+```bash
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/gvimrc ~/.gvimrc
+```
 
-Switch to the `~/.vim` directory, and fetch submodules:
+### Install minpac
 
-    cd ~/.vim
-    git submodule update --init
+```bash
+    mkdir -p ~/.vim/pack/minpac/opt
+    cd ~/.vim/pack/minpac/opt
+    git clone https://github.com/k-takata/minpac.git
+    cd
+```
 
-### Update Plugins
-
-    cd ~/.vim
-    git submodule foreach git pull origin master
+### Install all the Plugins
+```bash
+    vim
+    :PackUpdate
+```
 
 ## Prerequisites
 
@@ -39,11 +48,7 @@ Switch to the `~/.vim` directory, and fetch submodules:
 ### Settings
 
 #### Multiple plugin directories
-Load plugins from:
-- ~/.vim/bundle/
-- ~/.vim-testing/bundle/
-- ~/.vim-dev/bundle/
-- ~/.vim-local/bundle/
+- Not implemented anymore
 
 #### Multiple vimrcs
 Load vimrc from:
@@ -64,7 +69,6 @@ Load vimrc from:
 - Have undo kept.
 
 #### Plugin Settings
-- ZenCoding Abbrev Key CTRL-E
 - Powerline needs utf8.
 
 ### Functions
@@ -74,19 +78,27 @@ Load vimrc from:
 Fold and unfold with space key.
 
 ### Plugins
-- pathogen
-- Fugitive
-- gpg
-- tcomment
-- tabular
-- tagbar
-- matchit
-- latex-suite
-- zencoding
-- powerline
-- nerdtree
-- neocomplcache
-- snipmate
-- trailing-whitespace
-- searchcomplete
-- vim-repeat
+- Xuyuanp/nerdtree-git-plugin
+- airblade/vim-gitgutter
+- ap/vim-css-color
+- bronson/vim-trailing-whitespace
+- ctrlpvim/ctrlp.vim
+- easymotion/vim-easymotion
+- godlygeek/tabular
+- majutsushi/tagbar
+- netdata/vim-puppet
+- prettier/vim-prettier
+- scrooloose/nerdtree
+- shinzui/vim-idleFingers
+- tomtom/tcomment_vim
+- tpope/vim-eunuch
+- tpope/vim-endwise
+- tpope/vim-fugitive
+- tpope/vim-repeat
+- tpope/vim-surround
+- vim-airline/vim-airline
+- vim-airline/vim-airline-themes
+- vim-scripts/SearchComplete
+- vim-scripts/YankRing.vim
+- vim-scripts/gnupg.vim
+- w0rp/ale

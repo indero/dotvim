@@ -8,3 +8,4 @@ vimrc.local
 undodir/*
 *.swp
 view/
+pack/
