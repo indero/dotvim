@@ -1,26 +1,37 @@
 # My (indero) vim config
+
 ## Installation:
 
-    git clone git://github.com/indero/dotvim.git ~/.vim
+```bash
+git clone git://github.com/indero/dotvim.git ~/.vim
+```
 
 ### Create symlinks:
 
-    ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/gvimrc ~/.gvimrc
+```bash
+ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/gvimrc ~/.gvimrc
+```
 
-Switch to the `~/.vim` directory, and fetch submodules:
+### Install minpac
 
-    cd ~/.vim
-    git submodule update --init
+```bash
+mkdir -p ~/.vim/pack/minpac/opt
+cd ~/.vim/pack/minpac/opt
+git clone https://github.com/k-takata/minpac.git
+cd
+```
 
-### Update Plugins
+### Install/Update all the Plugins
 
-    cd ~/.vim
-    git submodule foreach git pull origin master
+```bash
+vim -E -c PackUpdate -c q
+```
 
 ## Prerequisites
 
-- Patched font for Powerline: https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
+- Patched font for Airline: https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
+  - or a Nerdfont (https://github.com/ryanoasis/nerd-fonts), if you want to use devicons
 - 256 Color Terminal
 
 ## Whats included:
@@ -30,20 +41,17 @@ Switch to the `~/.vim` directory, and fetch submodules:
 - jj as ESC
 - // reset search highlight
 - ,p open CTRLP
+- Try <Leader><Leader>{Motion}
 
 ### F-Keys
 - <F4> Toggle paste mode
-- <F5> Toggle between number/relative number/no number
+- <F5> Toggle between number/relative number/no number combined with listoptions disabled
 - <F6> Toggle Tagbar
 
 ### Settings
 
 #### Multiple plugin directories
-Load plugins from:
-- ~/.vim/bundle/
-- ~/.vim-testing/bundle/
-- ~/.vim-dev/bundle/
-- ~/.vim-local/bundle/
+- Not implemented anymore
 
 #### Multiple vimrcs
 Load vimrc from:
@@ -54,39 +62,46 @@ Load vimrc from:
 
 #### General Settings
 - Keep 100 lines of command history
-- By scrolling, keep the cursor 8 lines from top and bottom
+- By scrolling, keep the cursor 4 lines from top and bottom
 - Use the wildmenu
 - highlight search results
 - Begin search while typing
 - No bells
 - Tab is 2 spaces
 - Trailing whitspaces are displayed as a dot.
-- Have undo kept.
+- Modeline is enabled
 
 #### Plugin Settings
-- ZenCoding Abbrev Key CTRL-E
-- Powerline needs utf8.
+- Airline needs utf8.
 
 ### Functions
 
 #### Folding
 
-Fold and unfold with space key.
+Fold and unfold folds with space key.
 
 ### Plugins
-- pathogen
-- Fugitive
-- gpg
-- tcomment
-- tabular
-- tagbar
-- matchit
-- latex-suite
-- zencoding
-- powerline
-- nerdtree
-- neocomplcache
-- snipmate
-- trailing-whitespace
-- searchcomplete
-- vim-repeat
+- Xuyuanp/nerdtree-git-plugin
+- airblade/vim-gitgutter
+- ap/vim-css-color
+- bronson/vim-trailing-whitespace
+- ctrlpvim/ctrlp.vim
+- easymotion/vim-easymotion
+- godlygeek/tabular
+- majutsushi/tagbar
+- netdata/vim-puppet
+- prettier/vim-prettier
+- scrooloose/nerdtree
+- shinzui/vim-idleFingers
+- tomtom/tcomment_vim
+- tpope/vim-eunuch
+- tpope/vim-endwise
+- tpope/vim-fugitive
+- tpope/vim-repeat
+- tpope/vim-surround
+- vim-airline/vim-airline
+- vim-airline/vim-airline-themes
+- vim-scripts/SearchComplete
+- vim-scripts/YankRing.vim
+- vim-scripts/gnupg.vim
+- w0rp/ale

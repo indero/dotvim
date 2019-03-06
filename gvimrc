@@ -6,3 +6,8 @@
 "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 set guifont=Monaco\ for\ Powerline\ 10
 let Powerline_symbols = 'fancy'
+
+"Load a host specific file
+if filereadable(expand("$HOME/.vim/gvimrc.local"))
+  source $HOME/.vim/gvimrc.local
+endif
