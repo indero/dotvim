@@ -275,11 +275,13 @@ let g:ctrlp_map = '<LEADER>p'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_cache_dir = $HOME.'/.vim-cache/ctrlp'
 
-" === Powerline ===
+" === Airline ===
 " Use Fancy symbols
 " Get one of the fonts from:
 " https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
-let g:Powerline_symbols = 'fancy'
+let g:airline_theme='powerlineish'
+let g:airline_section_x ='%y [%b|0x%B]'
+let g:airline_powerline_fonts = 1
 " Add a segment
 "call Pl#Theme#InsertSegment('charcode', 'before', 'fileformat')
 
