@@ -1,4 +1,4 @@
-" ================ indero's vim config ==============
+" =============== indero's vim config ===============
 
 " Modeline and Notes {
 " vim:foldmarker={,}:foldmethod=marker
@@ -13,7 +13,7 @@
 " are not Vi compatible but really really nice.
 set nocp
 
-" ========== MinPac Initialization ========== {
+" ========== MinPac Initialization ========== {1
 
 " For a paranoia.
 " Normally `:set nocp` is not needed, because it is done automatically
@@ -60,18 +60,25 @@ call minpac#add('guns/xterm-color-table.vim', {'type': 'opt'})
 "call minpac#add('')
 
 
-" minpac utility commands
+" minpac utility commands {2
 command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'do': 'call minpac#status()'})
 command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
 command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
+"}2
 
 
-" Basic config
+" Load built in Plugins {2
+packadd! matchit
+packadd! justify
+" }2
+
+" Basic config {2
 filetype off
 syntax on
 filetype plugin indent on
+" }2
 
-" }
+" }1
 
 " My colorscheme
 colorscheme idleFingers
@@ -144,7 +151,7 @@ set number
 
 " When the page starts to scroll, keep the cursor 8 lines from the top and 8
 " lines from the bottom
-set scrolloff=8
+set scrolloff=4
 
 " Make the command-line completion better
 set wildmenu
@@ -185,25 +192,30 @@ set novisualbell
 " Create a view-dir
 set viewdir=~/.vim-cache/view
 
-" Read per file settings
+" Read per file settings {2
 set modeline
+
 " First and last four lines can contain settings
 set modelines=4
+" }2
 
 " Diffrent background color after char 80
 if has ('colorcolumn')
-set colorcolumn=80
-let &colorcolumn=join(range(81,237),",")
-highlight ColorColumn ctermbg=234 guibg=#1c1c1c
+  set colorcolumn=80
+  let &colorcolumn=join(range(81,237),",")
+  highlight ColorColumn ctermbg=234 guibg=#1c1c1c
 endif
 
-" ===== Tab stuff ===== {
+" ===== Tabstops stuff ===== {
 " a tab is two spaces
 set tabstop=2
+
 " an autoindent (with <<) is two spaces
 set shiftwidth=2
+
 " convert tabs in to spaces
 set expandtab
+
 " This makes the backspace key treat the two spaces like a tab
 " (so one backspace goes back a full 2 spaces).
 set softtabstop=2
@@ -245,25 +257,25 @@ endif
 set undolevels=1000 "maximum number of changes that can be undone
 " }
 
-" ===== Plugin specific ====== {
+" ===== Plugin Settings ===== {
 
-"Set encoding
+" Set encoding
 set encoding=utf-8
 
-" == Zen Coding Config ==
+" === Zen Coding Config ===
 " Change zen coding plugin expansion key to shift + e
 let g:user_zen_expandabbr_key = '<C-e>'
 
-" == neocomplcache ==
+" === neocomplcache ===
 let g:neocomplcache_enable_at_startup = 1
 let g:acp_enableAtStartup = 0
 
-" == CTRLP ==
+" === CTRLP ===
 let g:ctrlp_map = '<LEADER>p'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_cache_dir = $HOME.'/.vim-cache/ctrlp'
 
-" == Powerline ==
+" === Powerline ===
 " Use Fancy symbols
 " Get one of the fonts from:
 " https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
@@ -271,17 +283,19 @@ let g:Powerline_symbols = 'fancy'
 " Add a segment
 "call Pl#Theme#InsertSegment('charcode', 'before', 'fileformat')
 
-" == Tagbar ==
+" === Tagbar ===
 " Autofocus on opening Tagbar
 let g:tagbar_autofocus = 1
 
-" == Latex Config ==
+" === Latex Config ===
 " Latex plugin does autofold. I don't like this.
 autocmd Filetype tex setlocal nofoldenable " I don't like autofold from vim-latex
 
 " }
 
-" ========== Folding function ========== {
+" ========== Custom Functions ========== {1
+
+" ===== Folding function ===== {2
 
 " Automatically fold everything, but open all folds.
 " To fold simply press <RETURN>
@@ -318,18 +332,18 @@ noremap <space> :call ToggleFold()<CR>
 
 "}
 
-" ========== Toggle numbers function ========== {
+" ===== Toggle numbers function ===== {3
 
 " This function lets you toggle between:
-" number, relativenumber, nonumber
+" number, hybrid, nonumber
 if exists('+relativenumber')
   function! ToggleNumbers()
-    if &number
+    if &number && &relativenumber == 0
       set relativenumber       " was number, now relanum
-    elseif &relativenumber
-      set norelativenumber     " was relanum, now nothing
+    elseif &relativenumber && &number
+      set nonumber norelativenumber " was relativenumber and number now nothing
     else
-      set number               " was nothing, now number
+      set number " was nothing, now number
     endif
   endfunction
 else
@@ -339,9 +353,11 @@ else
 endif
 
 nmap <F5> :silent call ToggleNumbers()<CR>
-" }
+" }3
 
-"}
+" }2
+"
+"}1
 
 " ========== Load More vim configs ========== {
 " load vimrc for testing
