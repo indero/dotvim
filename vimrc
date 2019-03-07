@@ -224,13 +224,23 @@ set softtabstop=2
 
 " ===== Invisible Chars ===== {
 
-" Show invisible characters set listchars=""                  " Reset the listchars
+" Show invisible characters set listchars="" " Reset the listchars
 set list
-" A tab should display as "  ", trailing whitespace as "."
-set listchars=tab:\ \
+" A tab should display as "‣-", trailing whitespace as "•"
+" set listchars=tab:>-
+set listchars=tab:‣-
+" extended chars when wrap is off
+set listchars+=extends:»,
+" precedes chars when wrap is off
+set listchars+=precedes:«
 " Show trailing spaces as dots
-set listchars+=trail:.
-
+set listchars+=trail:•
+" nonbreakable space
+set listchars+=nbsp:¬
+" no char at eol
+set listchars-=eol
+" set listchars+=eol:¶
+set showbreak=↪\ 
 " }
 
 " ===== Undo ===== {
