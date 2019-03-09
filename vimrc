@@ -80,8 +80,41 @@ filetype plugin indent on
 
 " }1
 
+" ========== Colorscheme ========== {1
+
 " My colorscheme
 colorscheme idleFingers
+
+" Ensure SignColumn, FoldColumn and LineNr
+highlight LineNr ctermbg=238 ctermfg=250 guibg=#444444 guifg=#bcbcbc
+
+" Ensure SignColumn is a little bit lighter than LineNr
+highlight SignColumn ctermbg=239 ctermfg=250 guibg=#4e4e4e
+
+" Foldcolumn in better color
+highlight FoldColumn ctermbg=239 ctermfg=251 guibg=#4e4e4e
+
+" ColorColumn, show where column 80 is
+set colorcolumn=80
+hi ColorColumn ctermbg=234 guibg=#1c1c1c
+
+" Enable Cursorline but make it invisible
+set cul
+hi clear CursorLine
+augroup CLClear
+  autocmd! ColorScheme * hi clear CursorLine
+augroup END
+
+" Highlight the Cursorline Number
+hi clear CursorLineNr
+hi CursorLineNR ctermbg=NONE ctermfg=202 guifg=#ff5f00
+augroup CLNRSet
+  autocmd! ColorScheme * hi CursorLineNR ctermbg=NONE ctermfg=202
+augroup END
+
+
+
+" }1
 
 " ========== Special Buttons ========== {
 
@@ -200,11 +233,11 @@ set modelines=4
 " }2
 
 " Diffrent background color after char 80
-if has ('colorcolumn')
-  set colorcolumn=80
-  let &colorcolumn=join(range(81,237),",")
-  highlight ColorColumn ctermbg=234 guibg=#1c1c1c
-endif
+" if has ('colorcolumn')
+"   set colorcolumn=80
+"   let &colorcolumn=join(range(81,237),",")
+"   highlight ColorColumn ctermbg=234 guibg=#1c1c1c
+" endif
 
 " ===== Tabstops stuff ===== {
 " a tab is two spaces
@@ -303,6 +336,35 @@ let g:tagbar_autofocus = 1
 " Latex plugin does autofold. I don't like this.
 autocmd Filetype tex setlocal nofoldenable " I don't like autofold from vim-latex
 
+" === vim-gitgutter ===
+let g:gitgutter_override_sign_column_highlight = 0
+highlight GitGutterAdd ctermfg=darkgreen ctermbg=239 guibg=#4e4e4e guifg=#00ff00
+highlight GitGutterChange ctermfg=yellow ctermbg=239 guibg=#4e4e4e guifg=#808000
+highlight GitGutterDelete ctermfg=red ctermbg=239 guibg=#4e4e4e guifg=#800000
+highlight GitGutterChangeDelete ctermfg=yellow ctermbg=239 guibg=#4e4e4e
+autocmd BufWritePost * GitGutter
+
+if exists('&signcolumn')  " Vim 7.4.2201
+  set signcolumn=yes
+else
+  let g:gitgutter_sign_column_always = 1
+endif
+
+" === ale ===
+highlight ALEErrorSign ctermfg=203
+highlight ALEWarningSign ctermfg=136
+
+let g:ale_echo_msg_error_str = 'Error'
+let g:ale_echo_msg_warning_str = 'Warning'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '!'
+let g:ale_list_window_size = 5
+
+let g:ale_python_flake8_args = '--ignore=E,W,F403,F405 --select=F,C'
+let b:ale_linters = ['flake8', 'pylint']
+
 " }
 
 " ========== Custom Functions ========== {1
@@ -354,8 +416,14 @@ if exists('+relativenumber')
       set relativenumber       " was number, now relanum
     elseif &relativenumber && &number
       set nonumber norelativenumber " was relativenumber and number now nothing
+      set foldcolumn=0
+      set signcolumn=no
+      set nolist
     else
       set number " was nothing, now number
+      set foldcolumn=2
+      set signcolumn=auto
+      set list
     endif
   endfunction
 else
