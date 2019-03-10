@@ -29,7 +29,8 @@
 
 ## Prerequisites
 
-- Patched font for Powerline: https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
+- Patched font for Airline: https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
+  - or a Nerdfont (https://github.com/ryanoasis/nerd-fonts), if you want to use devicons
 - 256 Color Terminal
 
 ## Whats included:
@@ -42,7 +43,7 @@
 
 ### F-Keys
 - <F4> Toggle paste mode
-- <F5> Toggle between number/relative number/no number
+- <F5> Toggle between number/relative number/no number combined with listoptions disabled
 - <F6> Toggle Tagbar
 
 ### Settings
@@ -59,23 +60,23 @@ Load vimrc from:
 
 #### General Settings
 - Keep 100 lines of command history
-- By scrolling, keep the cursor 8 lines from top and bottom
+- By scrolling, keep the cursor 4 lines from top and bottom
 - Use the wildmenu
 - highlight search results
 - Begin search while typing
 - No bells
 - Tab is 2 spaces
 - Trailing whitspaces are displayed as a dot.
-- Have undo kept.
+- Modeline is enabled
 
 #### Plugin Settings
-- Powerline needs utf8.
+- Airline needs utf8.
 
 ### Functions
 
 #### Folding
 
-Fold and unfold with space key.
+Fold and unfold folds with space key.
 
 ### Plugins
 - Xuyuanp/nerdtree-git-plugin
