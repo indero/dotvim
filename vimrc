@@ -365,6 +365,9 @@ let g:ale_list_window_size = 5
 let g:ale_python_flake8_args = '--ignore=E,W,F403,F405 --select=F,C'
 let b:ale_linters = ['flake8', 'pylint']
 
+" enable golint for golang
+let b:ale_linters = {'go': ['golint']}
+
 " }
 
 " ========== Custom Functions ========== {1
