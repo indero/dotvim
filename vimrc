@@ -398,6 +398,11 @@ let b:ale_linters = ['flake8', 'pylint']
 let b:ale_linters = {'go': ['golint']}
 
 " === Markdown ===
+"
+" Hide Markdown source until cursor is on element
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 
 let g:tagbar_type_markdown = {
     \ 'ctagstype' : 'markdown',
