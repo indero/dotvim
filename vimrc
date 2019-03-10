@@ -37,6 +37,7 @@ call minpac#add('scrooloose/nerdtree') " Nice file explorer
 call minpac#add('shinzui/vim-idleFingers') " Color Theme
 call minpac#add('vim-airline/vim-airline') " Vim Airline, Fancy Statusbar
 call minpac#add('vim-airline/vim-airline-themes') " Themes for Airline
+call minpac#add('ryanoasis/vim-devicons') " Add devicons if a Nerd Font is installed
 
 " Functionality
 call minpac#add('bronson/vim-trailing-whitespace') " add the command :FixWhitespace
@@ -64,8 +65,24 @@ call minpac#add('tomtom/tcomment_vim') " use gcc to comment out a line
 call minpac#add('tpope/vim-fugitive') " Git wrapper for vim
 call minpac#add('w0rp/ale') " async syntax checker and linter
 
+" Autocompletion
+call minpac#add('Shougo/deoplete.nvim') " deoplete completer
+call minpac#add('roxma/nvim-yarp') " helper for deoplete
+call minpac#add('roxma/vim-hug-neovim-rpc') " helper for deoplete
+call minpac#add('Shougo/neco-vim') " deoplete vim completion
+call minpac#add('deoplete-plugins/deoplete-jedi') "deoplete python completion
+
+" Go Language Support
+call minpac#add('fatih/vim-go') " go plugin
+
 " Puppet Language Support
 call minpac#add('netdata/vim-puppet')
+
+" Python Language Support
+
+" Markdown Support
+call minpac#add('plasticboy/vim-markdown')
+call minpac#add('tenfyzhong/tagbar-markdown.vim')
 
 " Optional Plugins
 call minpac#add('guns/xterm-color-table.vim', {'type': 'opt'})
@@ -312,7 +329,7 @@ endif
 set undolevels=1000 "maximum number of changes that can be undone
 " }
 
-" ===== Plugin Settings ===== {
+" ===== Plugin and Language Settings ===== {
 
 " Set encoding
 set encoding=utf-8
@@ -379,6 +396,24 @@ let b:ale_linters = ['flake8', 'pylint']
 
 " enable golint for golang
 let b:ale_linters = {'go': ['golint']}
+
+" === Markdown ===
+
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:Heading 1 (Title)',
+        \ 'i:Heading 2',
+        \ 'k:Heading 3'
+    \ ]
+\ }
+
+" Content of ~/.ctags
+" --langdef=markdown
+" --langmap=markdown:.mkd
+" --regex-markdown=/^#[ \t]+(.*)/\1/h,Heading_1_Title/
+" --regex-markdown=/^##[ \t]+(.*)/\1/i,Heading_2/
+" --regex-markdown=/^###[ \t]+(.*)/\1/k,Heading_3/
 
 " }
 
