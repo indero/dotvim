@@ -79,6 +79,7 @@ call minpac#add('fatih/vim-go') " go plugin
 call minpac#add('netdata/vim-puppet')
 
 " Python Language Support
+call minpac#add('tmhedberg/SimpylFold')
 
 " Markdown Support
 call minpac#add('plasticboy/vim-markdown')
@@ -397,6 +398,9 @@ let b:ale_linters = ['flake8', 'pylint']
 " enable golint for golang
 let b:ale_linters = {'go': ['golint']}
 
+" === SimplyFold (Python) ===
+let g:SimpylFold_docstring_preview = 1
+
 " === Markdown ===
 "
 " Hide Markdown source until cursor is on element
@@ -459,9 +463,9 @@ endf
 " Map this function to Space key.
 noremap <space> :call ToggleFold()<CR>
 
-"}
+"}2
 
-" ===== Toggle numbers function ===== {3
+" ===== Toggle numbers function ===== {2
 
 " This function lets you toggle between:
 " number, hybrid, nonumber
@@ -488,10 +492,17 @@ else
 endif
 
 nmap <F5> :silent call ToggleNumbers()<CR>
-" }3
-
 " }2
-"
+
+" ===== Elite Mode ===== {2
+if get(g:, 'elite_mode')
+  nnoremap <Up>    :resize +2<CR>
+  nnoremap <Down>  :resize -2<CR>
+  nnoremap <Left>  :vertical resize +2<CR>
+  nnoremap <Right> :vertical resize -2<CR>
+endif
+" }2
+
 "}1
 
 " ========== Load More vim configs ========== {
