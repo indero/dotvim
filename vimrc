@@ -29,31 +29,43 @@ call minpac#init({'verbose': 3})
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 " Plugins :call#minpac#update()
-call minpac#add('Xuyuanp/nerdtree-git-plugin')
-call minpac#add('airblade/vim-gitgutter')
-call minpac#add('ap/vim-css-color')
-call minpac#add('bronson/vim-trailing-whitespace')
-call minpac#add('ctrlpvim/ctrlp.vim')
-call minpac#add('easymotion/vim-easymotion')
-call minpac#add('godlygeek/tabular')
-call minpac#add('majutsushi/tagbar')
-call minpac#add('netdata/vim-puppet')
-call minpac#add('prettier/vim-prettier')
-call minpac#add('scrooloose/nerdtree')
-call minpac#add('shinzui/vim-idleFingers')
-call minpac#add('tomtom/tcomment_vim')
-call minpac#add('tpope/vim-eunuch')
-call minpac#add('tpope/vim-endwise')
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('tpope/vim-repeat')
-call minpac#add('tpope/vim-surround')
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
-call minpac#add('vim-scripts/SearchComplete')
-call minpac#add('vim-scripts/YankRing.vim')
-call minpac#add('vim-scripts/gnupg.vim', {'type': 'opt'})
-call minpac#add('w0rp/ale')
 " call minpac#add('')
+
+" Looks and Feel
+call minpac#add('Xuyuanp/nerdtree-git-plugin') " git plugin for nerdtree
+call minpac#add('scrooloose/nerdtree') " Nice file explorer
+call minpac#add('shinzui/vim-idleFingers') " Color Theme
+call minpac#add('vim-airline/vim-airline') " Vim Airline, Fancy Statusbar
+call minpac#add('vim-airline/vim-airline-themes') " Themes for Airline
+
+" Functionality
+call minpac#add('bronson/vim-trailing-whitespace') " add the command :FixWhitespace
+call minpac#add('ctrlpvim/ctrlp.vim') " Adds the ctrl-p, fuzzy file, buffer, nru ...
+call minpac#add('easymotion/vim-easymotion') " Helps with navigating. <Leader><Leader>w
+call minpac#add('godlygeek/tabular') " helps with alignment of text
+call minpac#add('tpope/vim-eunuch') " Vim sugar for Unix shell commands (:SudoWrite)
+call minpac#add('tpope/vim-surround') " Adds the surround motion to vim
+
+" Utility
+call minpac#add('vim-scripts/gnupg.vim', {'type': 'opt'})
+
+" Invisible Helpers
+call minpac#add('ap/vim-css-color') " Highlight css style colors aprooximatly
+call minpac#add('tpope/vim-endwise') " Autocloses some construct in some languages.
+call minpac#add('tpope/vim-repeat') " Changes the way . works by allowing plugins to use it
+call minpac#add('vim-scripts/SearchComplete') " Autocomplete your searches in the file
+call minpac#add('vim-scripts/YankRing.vim') " Better yanking and pasting
+
+" Programming Support
+call minpac#add('airblade/vim-gitgutter') " have git info in the SignColumn
+call minpac#add('majutsushi/tagbar') " Have a list of function and classes to jump to
+call minpac#add('prettier/vim-prettier') " Prettier web development files
+call minpac#add('tomtom/tcomment_vim') " use gcc to comment out a line
+call minpac#add('tpope/vim-fugitive') " Git wrapper for vim
+call minpac#add('w0rp/ale') " async syntax checker and linter
+
+" Puppet Language Support
+call minpac#add('netdata/vim-puppet')
 
 " Optional Plugins
 call minpac#add('guns/xterm-color-table.vim', {'type': 'opt'})
