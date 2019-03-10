@@ -40,6 +40,7 @@
 - jj as ESC
 - // reset search highlight
 - ,p open CTRLP
+- Try <Leader><Leader>{Motion}
 
 ### F-Keys
 - <F4> Toggle paste mode
