@@ -5,6 +5,7 @@
 tags
 tags-ja
 vimrc.local
+gvimrc.local
 undodir/*
 *.swp
 view/
