@@ -283,6 +283,9 @@ set expandtab
 " (so one backspace goes back a full 2 spaces).
 set softtabstop=2
 
+" Fix Backspace in insert mode
+set backspace=indent,eol,start
+
 " }
 
 " ===== Invisible Chars ===== {
