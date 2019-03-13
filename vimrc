@@ -26,7 +26,7 @@ endif
 
 packadd minpac
 call minpac#init({'verbose': 3})
-call minpac#add('k-takata/minpac', {'type': 'opt'})
+call minpac#add("k-takata/minpac", {'type': 'opt'})
 
 " Plugins :call#minpac#update()
 " call minpac#add('')
@@ -158,10 +158,17 @@ set pastetoggle=<f4>
 nmap <F6> :TagbarToggle<CR>
 
 " Disable cursor keys in normal mode
-map <Left>  :echo "no!"<cr>
-map <Right> :echo "no!"<cr>
-map <Up>    :echo "no!"<cr>
-map <Down>  :echo "no!"<cr>
+  nnoremap <Left>  :echo "Use HJKL!"<cr>
+  nnoremap <Right> :echo "Use HJKL!"<cr>
+  nnoremap <Up>    :echo "Use HJKL!"<cr>
+  nnoremap <Down>  :echo "Use HJKL!"<cr>
+
+  " Use Shift and direction to resize splits
+  nnoremap <S-Up>    :resize +2<CR>
+  nnoremap <S-Down>  :resize -2<CR>
+  nnoremap <S-Left>  :vertical resize +2<CR>
+  nnoremap <S-Right> :vertical resize -2<CR>
+
 
 " Change the mapleader from \ to ,
 let mapleader=","
@@ -497,14 +504,6 @@ endif
 nmap <F5> :silent call ToggleNumbers()<CR>
 " }2
 
-" ===== Elite Mode ===== {2
-if get(g:, 'elite_mode')
-  nnoremap <Up>    :resize +2<CR>
-  nnoremap <Down>  :resize -2<CR>
-  nnoremap <Left>  :vertical resize +2<CR>
-  nnoremap <Right> :vertical resize -2<CR>
-endif
-" }2
 
 "}1
 
