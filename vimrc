@@ -183,7 +183,7 @@ nmap <silent> // :nohlsearch<CR>
 
 " }
 
-" ========== General Config ========== {
+" ========== General Config ========== {1
 
 " ==== Alternate Statusline (without powerline) ====
 " Set the status line the way i like it
@@ -340,7 +340,7 @@ endif
 set undolevels=1000 "maximum number of changes that can be undone
 " }
 
-" ===== Plugin and Language Settings ===== {
+" ===== Plugin and Language Settings ===== {2
 
 " Set encoding
 set encoding=utf-8
@@ -434,7 +434,9 @@ let g:tagbar_type_markdown = {
 " --regex-markdown=/^##[ \t]+(.*)/\1/i,Heading_2/
 " --regex-markdown=/^###[ \t]+(.*)/\1/k,Heading_3/
 
-" }
+
+
+" }2
 
 " ========== Custom Functions ========== {1
 
