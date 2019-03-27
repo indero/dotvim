@@ -38,6 +38,7 @@ call minpac#add('shinzui/vim-idleFingers') " Color Theme
 call minpac#add('vim-airline/vim-airline') " Vim Airline, Fancy Statusbar
 call minpac#add('vim-airline/vim-airline-themes') " Themes for Airline
 call minpac#add('ryanoasis/vim-devicons') " Add devicons if a Nerd Font is installed
+call minpac#add('luochen1990/rainbow') " Color matching braces
 
 " Functionality
 call minpac#add('bronson/vim-trailing-whitespace') " add the command :FixWhitespace
@@ -113,7 +114,12 @@ filetype plugin indent on
 " ========== Colorscheme ========== {1
 
 " My colorscheme
-colorscheme idleFingers
+try
+  colorscheme idleFingers
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme default
+endtry
+
 
 " Ensure SignColumn, FoldColumn and LineNr
 highlight LineNr ctermbg=238 ctermfg=250 guibg=#444444 guifg=#bcbcbc
@@ -435,6 +441,31 @@ let g:tagbar_type_markdown = {
 " --regex-markdown=/^###[ \t]+(.*)/\1/k,Heading_3/
 
 
+" === Rainbow ===
+" Adding color braces
+"
+let g:rainbow_conf = {
+      \ 'guifgs': ['lightblue', 'green', 'yellow', 'purple', 'lightgreen', 'orangered', 'pink' ],
+      \ 'ctermfgs': ['lightblue', '34', '11', '68', '46', '130', '211' ],
+      \ 'operators': '_,_',
+      \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+      \ 'separately': {
+      \   '*': {},
+      \   'tex': {
+      \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+      \   },
+      \   'lisp': {
+      \     'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+      \   },
+      \   'vim': {
+      \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+      \   },
+      \   'html': {
+      \     'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+      \   },
+      \   'css': 0,
+      \ }
+      \}
 
 " }2
 
@@ -504,6 +535,20 @@ else
 endif
 
 nmap <F5> :silent call ToggleNumbers()<CR>
+" }2
+
+
+" ===== Close final Buffer===== {2
+" Close Vim if the only Buffer remainig is a NerdTree window or a Quickfix
+" Window
+"
+augroup finalcountdown
+ au!
+ "autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' |q|endif
+ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) || &buftype == 'quickfix' | q | endif
+ "nmap - :Lexplore<cr>
+ nmap - :NERDTreeToggle<cr>
+augroup END
 " }2
 
 
