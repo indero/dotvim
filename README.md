@@ -1,30 +1,31 @@
 # My (indero) vim config
+
 ## Installation:
 
 ```bash
-    git clone git://github.com/indero/dotvim.git ~/.vim
+git clone git://github.com/indero/dotvim.git ~/.vim
 ```
 
 ### Create symlinks:
 
 ```bash
-    ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/gvimrc ~/.gvimrc
+ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/gvimrc ~/.gvimrc
 ```
 
 ### Install minpac
 
 ```bash
-    mkdir -p ~/.vim/pack/minpac/opt
-    cd ~/.vim/pack/minpac/opt
-    git clone https://github.com/k-takata/minpac.git
-    cd
+mkdir -p ~/.vim/pack/minpac/opt
+cd ~/.vim/pack/minpac/opt
+git clone https://github.com/k-takata/minpac.git
+cd
 ```
 
-### Install all the Plugins
+### Install/Update all the Plugins
+
 ```bash
-    vim
-    :PackUpdate
+vim -E -c PackUpdate -c q
 ```
 
 ## Prerequisites
