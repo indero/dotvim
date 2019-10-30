@@ -85,6 +85,7 @@ call minpac#add('tmhedberg/SimpylFold')
 " Markdown Support
 call minpac#add('plasticboy/vim-markdown')
 call minpac#add('tenfyzhong/tagbar-markdown.vim')
+call minpac#add('PratikBhusal/vim-grip')
 
 " Optional Plugins
 call minpac#add('guns/xterm-color-table.vim', {'type': 'opt'})
@@ -298,6 +299,10 @@ set softtabstop=2
 
 " Fix Backspace in insert mode
 set backspace=indent,eol,start
+
+" Fix pasting with middle mousebutton
+" https://unix.stackexchange.com/questions/364047/stop-vim-pasting-selections-as-text
+set t_BE=
 
 " }
 
